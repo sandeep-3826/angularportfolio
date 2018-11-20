@@ -1,0 +1,14 @@
+<app-slider></app-slider>
+<div class="container">
+<h1 class="text-center newsheading" ><span style="color: rgb(238, 9, 39)">LATEST&nbsp;</span><span style="color: rgba(14, 37, 243, 0.911)">NEWS</span></h1><hr>
+<div *ngFor = "let n of latestNews|myPipes:5">
+  <h3 appAttr>{{n.title}}</h3><br>
+  <p>
+    <img [src]="n.urlToImage" style="width: 100%; height: 450px; border-radius: 15px;" id="newsimage"/><br/>
+    <span>{{n.publishedAt|date}}</span><br/>
+    <span style="color: rgb(0, 0, 0); font-size: 20px;">{{n.description}}</span>
+  </p>
+  <hr>
+</div>
+</div>
+<app-addressinfo></app-addressinfo>

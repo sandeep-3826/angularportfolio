@@ -1,0 +1,105 @@
+<app-common></app-common>
+<!--====== Contact ======-->
+<section class="contact section-padding" data-scroll-index="6">
+  <div class="container">
+    <div class="row">
+      
+      <!-- section heading -->
+      <div class="section-head">
+        <h3>Contact Me</h3>
+      </div>
+<div class="col-md-7">
+<!-- contact form -->
+<form (ngSubmit)="contact()" [formGroup]="myForm" method="post" >
+  <div class="controls form">
+
+      <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                  <input  type="text" name="name" placeholder="Name" ([ngModel])="myData.name" formControlName="name"/>
+                  <div *ngIf="myForm.controls['name'].invalid && myForm.controls['name'].touched">
+                    <span>Name is required</span>
+                  </div>
+              </div>
+          </div>
+
+           <div class="col-md-6">
+              <div class="form-group">
+                  <input type="email" name="email" placeholder="Email" ([ngModel])="myData.email" formControlName="email"/>
+                  <div *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched">
+                    <span>Email is required</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <input  type="text" name="phone" placeholder="Contact Number" ([ngModel])="myData.phone" formControlName="phone"/>
+            <div *ngIf="myForm.controls['phone'].invalid && myForm.controls['phone'].touched">
+              <span>Phone Number is required</span>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <textarea name="address" placeholder="Address" rows="4" ([ngModel])="myData.address" formControlName="address"></textarea>
+                <div *ngIf="myForm.controls['address'].invalid && myForm.controls['address'].touched">
+                  <span>Address is required</span>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+              <div class="form-group">
+                  <textarea name="message" placeholder="Message" rows="4" ([ngModel])="myData.message" formControlName="message"></textarea>
+                  <div *ngIf="myForm.controls['message'].invalid && myForm.controls['message'].touched">
+                    <span>Message is required</span>
+                  </div>
+              </div>
+
+              <input type="submit" value="Submit" class="buton buton-bg" [disabled]="myForm.invalid"/>
+          </div>
+      </div>
+  </div>
+</form>
+</div>
+<div class="col-md-5">
+<!-- contact info -->
+<div class="info text-center mb-50">
+
+  <div class="">
+    <div class="item">
+      <span class="icon"><i class="fa fa-location-arrow" aria-hidden="true"></i></span>
+      <h6>Address</h6>
+      <p>AshokNagar New Delhi India</p>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="item">
+      <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+      <h6>Email</h6>
+      <p>sandeeprai4303@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="item">
+      <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+      <h6>Phone</h6>
+      <p><a href="tel:+91(8433)-153-826">+91 8433 153 826</a></p>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+</div>
+      
+    </div><!-- /row -->
+  </div><!-- /container -->
+</section>
+<!--====== End Contact ======-->
